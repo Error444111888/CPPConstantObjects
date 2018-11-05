@@ -19,7 +19,7 @@ The additional code should make use of an if statement to check the exponent val
 Show sample code that will call the function and get the result. */
 
 int n = 2;
-int	p = 8;
+int	const p = 8;
 int	e = 1;
 int	i = 1;
 
