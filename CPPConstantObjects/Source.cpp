@@ -19,11 +19,11 @@ The additional code should make use of an if statement to check the exponent val
 Show sample code that will call the function and get the result. */
 
 int n = 2;
-int	const p = 8;
+int p = 8;
 int	e = 1;
 int	i = 1;
 
-int pow ();
+inline void pow ();
 	{
 		for (i = 1; i <= p; i++)
 		{
@@ -60,4 +60,12 @@ Ensure that you paste the code for the function as well as the code that calls t
 		int sin = (opposite / hypotenuse);
 
 			cout << sin << endl;
+	}
+
+	inline void pow()
+	{
+	}
+
+	inline void pow(int e)
+	{
 	}
