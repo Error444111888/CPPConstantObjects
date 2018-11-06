@@ -18,54 +18,90 @@ Use the code you created in the previous module for some of this functionality b
 The additional code should make use of an if statement to check the exponent value. If it is 0, then immediately return 1 otherwise calculate the power and return the result.
 Show sample code that will call the function and get the result. */
 
-int n = 2;
-int p = 8;
-int	e = 1;
-int	i = 1;
 
-inline void pow ();
-	{
-		for (i = 1; i <= p; i++)
+
+// First function
+int pow(int base, int exponent)
+{
+	int result = 1;
+	// Now the if statement
+	if (exponent < 0)
 		{
-			e = i * n;
-			if (e == 0)
-			{
-				return 1;
-			}
-			else
-			{
-				if (e = > 1)
-				{
-					cout << e << endl;
-				}
-			}
+		return -1;
 		}
+
+	else if (exponent == 0)
+		{
+		return result;
+		}	
+	// Rest of the options
+	else
+		{
+		for (int i = 1; i <= exponent; i++)
+		{
+			result *= base;
+		}
+		return result;
+		}
+	
+}
+
+
+/*Second Example
+Expanding Your Knowledge
+For the second part of this assignment, you will create a function to perform the average of values in an array. To complete this portion, your code should match the following requirements:
+
+Create a function called avg that will accept an integer array. You may not have seen this in a demo but passing an array to a function is no different than passing any other data type. Search the Internet for an example if you can't figure out how to pass the array.
+Create an array of integers, at least 5 in size, and pass it to the avg function.
+Inside the function, use a loop to iterate over the array elements and calculate the average.
+Return the average back to the code that called it.*/
+
+
+// How to get the Sinus?
+
+double sine(double opposite, double hypotenuse)
+{
+	return opposite / hypotenuse;
+}
+
+double average(int values[], int length)
+{
+	double total = 0.0;
+	for (int i = 0; i < length; i++)
+	{
+		total += values[i];
+		// cout << "values["<< i << "]: " << values[i] << endl;
+		// cout << endl;
 	}
+	return total / length;
+}
 
+int main() {
 
-/*Function for how to find Sin? 
-Sin = Opposite / Hypetenuse*/
+	int base = 2;
+	int exponent = 8;
+	int result = pow(base, exponent);
+	cout << base << "^" << exponent << " = " << result << endl;
+	cout << endl;
 
-/*For the second function you will compute the sine of an angle. Your function should accept the opposite and hypotenuse lengths and return the sine value. The formula for sine is: 
-sin = opposite / hypotenuse
-where / is used to denote division
-Ensure that you paste the code for the function as well as the code that calls the function and assigns the value to a variable.*/
+	double opposite = 4.2;
+	double hypotenuse = 2.1;
+	double sineValue = sine(opposite, hypotenuse);
+	cout << "Sine of a triangle with opposite " << opposite << " and hypotenuse " << hypotenuse << " is: " << sineValue << endl;
+	cout << endl;
 
-	int opposite = 5;
-	int hypotenuse = 2;
+	int values[] = { 1, 2, 3, 4, 5 };
+	int length = sizeof(values) / sizeof(values[0]);
+	// debugging code
+	// cout <<"length: " << length << endl;
+	// cout << "sizeof(values): " << sizeof(values) <<endl;
+	// cout << "sizeof(values[0]) " << sizeof(values[0]) <<endl;
+	// cout << endl;
+	double avg = average(values, length);
+	cout << "The average of the values array is: " << avg << endl;
+	cout << endl;
 
 	
-	int Triangle()
-	{
-		int sin = (opposite / hypotenuse);
 
-			cout << sin << endl;
-	}
-
-	inline void pow()
-	{
-	}
-
-	inline void pow(int e)
-	{
-	}
+	cin.get();
+}
